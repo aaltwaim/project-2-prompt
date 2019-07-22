@@ -1,0 +1,29 @@
+<%= form_with(model: auction, local: true) do |form| %>
+  <% if auction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(auction.errors.count, "error") %> prohibited this auction from being saved:</h2>
+
+      <ul>
+      <% auction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <%= form.hidden_field :collectible_id , :value => @collectible.id%>
+
+  
+
+    <%= form.hidden_field :previous_bidding, :value =>  @collectible.current_bid  %>
+
+  <div class="field">
+    <%= form.label :current_bidding %>
+    <%= form.number_field :current_bidding %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

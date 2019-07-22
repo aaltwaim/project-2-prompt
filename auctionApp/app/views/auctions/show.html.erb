@@ -1,0 +1,18 @@
+
+<p>
+  <strong>Collectible:</strong>
+  <%= @auction.collectible_id %>
+</p>
+
+<p>
+  <strong>Previous bidding:</strong>
+  <%= @auction.previous_bidding %>
+</p>
+
+<p>
+  <strong>Current bidding:</strong>
+  <%= @auction.current_bidding %>
+</p>
+
+<%= link_to 'Edit', edit_auction_path(@auction) %> |
+<%= link_to 'Back', auctions_path %>

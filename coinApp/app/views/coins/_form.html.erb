@@ -1,0 +1,19 @@
+<%= form_for @coin do |f| %>
+  <div class="input-field col s6">
+  	<%= f.label :name, 'Name'%>
+  	<%= f.text_field :name%>
+  </div>
+  <div class="input-field col s6">
+  	<%= f.label :mintage, 'Mintage' %>
+  	<%= f.text_field :mintage %>
+  </div>
+  <div class="input-field col s6">
+  	<%= f.label :price, 'Price' %>
+  	<%= f.text_field :price %>
+  </div>
+  <div class="input-field col s6">
+  	<%= f.label :detail, 'Detail' %>
+  	<%= f.text_field :detail %>
+  </div>
+  <%= f.submit "Submit", :class => "btn waves-effect waves-light" %>
+<% end %>

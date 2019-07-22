@@ -1,0 +1,13 @@
+<h1>Editing Collectible</h1>
+ <% if current_user.id == @collectible.user_id %>
+ 
+<%= render 'form', collectible: @collectible %>
+
+
+<%= link_to 'Show', @collectible %> |
+<%= link_to 'Back', collectibles_path %>
+<% else%>
+<h3>You are not the authorized user to edit</h3>
+
+<%= link_to 'Show', @collectible%>
+<% end%>

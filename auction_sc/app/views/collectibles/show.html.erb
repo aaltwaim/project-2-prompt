@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @collectible.name %>
+</p>
+
+<p>
+  <strong>Mintage:</strong>
+  <%= @collectible.mintage %>
+</p>
+
+<p>
+  <strong>Current bid:</strong>
+  <%= @collectible.current_bid %>
+</p>
+
+<p>
+  <strong>Img:</strong>
+  <%= @collectible.img %>
+</p>
+
+<%= link_to 'Edit', edit_collectible_path(@collectible) %> |
+<%= link_to 'Back', collectibles_path %>

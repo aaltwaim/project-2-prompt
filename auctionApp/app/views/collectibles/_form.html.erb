@@ -1,0 +1,37 @@
+<%= form_with(model: collectible, local: true) do |form| %>
+  <% if collectible.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(collectible.errors.count, "error") %> prohibited this collectible from being saved:</h2>
+
+      <ul>
+      <% collectible.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mintage %>
+    <%= form.number_field :mintage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_bid %>
+    <%= form.number_field :current_bid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img %>
+    <%= form.text_field :img %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
