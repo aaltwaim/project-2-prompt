@@ -5,7 +5,7 @@ class CollectiblesController < ApplicationController
   # GET /collectibles
   # GET /collectibles.json
   def index
-    @collectibles = Collectible.all
+    @collectibles = Collectible.all.order(:id)
   end
 
   # GET /collectibles/1
