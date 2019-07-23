@@ -69,6 +69,8 @@ class CollectiblesController < ApplicationController
     
     end
   end
+  def yourCollectible
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

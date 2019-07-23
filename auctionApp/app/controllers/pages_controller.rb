@@ -5,4 +5,10 @@ class PagesController < ApplicationController
   def private_page
     @email = current_user.email
   end
+  def yourCollectible
+    @collectibles = current_user.collectibles
+  end
+  def yourAuction
+    @auctions = current_user.auctions 
+  end
 end

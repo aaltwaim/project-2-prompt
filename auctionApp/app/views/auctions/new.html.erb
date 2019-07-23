@@ -1,8 +1,8 @@
 <h1>New Auction</h1>
 
 <h2>Name: <%= @collectible.name %></h2>
-<h2>Img: <%= image_tag(@collectible.img, size: "200x200", alt: "Collectible Image") %></h2>
-<h2>Current Bid: <%= @collectible.current_bid %></h2>
+<h2><%= image_tag(@collectible.img, size: "200x200", alt: "Collectible Image") %></h2>
+<h2>Current Bid in (SAR): <%= @collectible.current_bid %></h2>
 
 <%= render 'form', auction: @auction %>
 
