@@ -1,10 +1,13 @@
 
 <h1>Collectibles</h1>
-<h3>Go to show for the auction </h3>
+<h3>Go to show to place a bid </h3>
 <%= link_to 'New Collectible', new_collectible_path %> | 
 <%= link_to 'Your Collectibles', pages_yourCollectible_path %> | 
 <%= link_to 'Auctions', auctions_path %>
-
+<%= form_tag collectibles_path, :method =>'get' do%>
+  <%= text_field_tag :search, params[:search]%>
+  <%= submit_tag 'Search'%>
+<% end%>
 
 <table class="table table-striped">
   <thead>

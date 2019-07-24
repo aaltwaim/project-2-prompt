@@ -5,7 +5,7 @@ class CollectiblesController < ApplicationController
   # GET /collectibles
   # GET /collectibles.json
   def index
-    @collectibles = Collectible.all.order(:id)
+    @collectibles = Collectible.where(["name ILIKE ?","%#{params[:search]}%"])
   end
 
   # GET /collectibles/1
@@ -56,18 +56,23 @@ class CollectiblesController < ApplicationController
   # DELETE /collectibles/1
   # DELETE /collectibles/1.json
   def destroy
+    if user_signed_in?
     if current_user.id == @collectible.user_id
         @collectible.destroy
         respond_to do |format|
             format.html { redirect_to collectibles_url, notice: 'Collectible was successfully destroyed.' }
             format.json { head :no_content }
         end
-     else
+    else
         respond_to do |format|
         format.html { redirect_to @collectible, notice: 'You can not delete this item because you are not the authrized user' }
         end
-    
     end
+  else
+    respond_to do |format|
+      format.html { redirect_to @collectible }
+      end
+  end
   end
   def yourCollectible
   end

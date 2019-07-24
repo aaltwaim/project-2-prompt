@@ -67,12 +67,22 @@ class AuctionsController < ApplicationController
   # DELETE /auctions/1
   # DELETE /auctions/1.json
   def destroy
-    @auction.destroy
-    respond_to do |format|
-      format.html { redirect_to auctions_url, notice: 'Auction was successfully destroyed.' }
-      format.json { head :no_content }
+    if user_signed_in?
+      
+  
+      @auction.destroy
+        respond_to do |format|
+        format.html { redirect_to auctions_url, notice: 'Auction was successfully destroyed.' }
+        format.json { head :no_content }
+
+        end
+    else
+      respond_to do |format|
+        format.html { redirect_to auctions_url, notice: 'Please Sign in' }
+      end
     end
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
