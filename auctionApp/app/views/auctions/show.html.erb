@@ -13,5 +13,9 @@
   <strong>Current bidding:</strong>
   <%= @auction.current_bidding %>
 </p> 
+<p>
+  <strong></strong>
+  <%= image_tag(Collectible.find(@auction.collectible_id).img, size: "200x200", alt: "Collectible Image")%>
+</p> 
 <%= link_to 'Edit', edit_auction_path(@auction) %> |
 <%= link_to 'Back', auctions_path %>

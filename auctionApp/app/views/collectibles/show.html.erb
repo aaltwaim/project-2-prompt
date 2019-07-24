@@ -18,6 +18,8 @@
   <strong></strong>
   <%= image_tag(@collectible.img, size: "200x200", alt: "Collectible Image") %>
 </p>
-<%= link_to 'Place a bid', new_collectible_auction_path(@collectible)%> | 
+<% if current_user.id != @collectible.user_id %>
+<%= link_to 'Place a bid', new_collectible_auction_path(@collectible)%> |
+<% end%> 
 <%= link_to 'Edit', edit_collectible_path(@collectible) %> |
 <%= link_to 'Back', collectibles_path %>
