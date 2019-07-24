@@ -18,6 +18,10 @@
   <strong></strong>
   <%= image_tag(@collectible.img, size: "200x200", alt: "Collectible Image") %>
 </p>
+<p>
+  <strong>Timer:</strong>
+  <%= @collectible.timer %>
+</p>
 <% if user_signed_in? %>
 <% if @collectible.user_id != current_user.id  %>
 <%= link_to 'Place a bid', new_collectible_auction_path(@collectible)%> |

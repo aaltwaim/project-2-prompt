@@ -74,8 +74,6 @@ class CollectiblesController < ApplicationController
       end
   end
   end
-  def yourCollectible
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -85,6 +83,6 @@ class CollectiblesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def collectible_params
-      params.require(:collectible).permit(:name, :mintage, :current_bid, :img)
+      params.require(:collectible).permit(:name, :mintage, :current_bid, :img, :timer)
     end
 end
